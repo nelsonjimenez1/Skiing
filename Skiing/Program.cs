@@ -22,6 +22,8 @@ namespace skiing
 
             (var matrixMap, var row, var col) = getMatrixFromFile();
             longestPath(matrixMap, row, col);
+            Console.WriteLine();
+            longestPath(matrix, 4, 4);
         }
         
         public static (int, List<int>) longestPathRecursive(int i, int j, int[,] matrix, int[,] matrixM, List<int>[,] bestPathM, int row, int col) 
@@ -99,14 +101,15 @@ namespace skiing
                 }
             }
 
+            Console.Write("Calculated path = ");
             foreach(var val in pathArray[indexMax])
             {
                 Console.Write(val);
                 Console.Write(" ");
             }
             Console.WriteLine();
-            Console.WriteLine(nMax);
-            Console.WriteLine(deepest);
+            Console.WriteLine("Length of calculated path = " + nMax);
+            Console.WriteLine("Drop of calculated path = " + deepest);
             //Console.WriteLine();
             //printMatrix(matrixM, row, col);
         }
